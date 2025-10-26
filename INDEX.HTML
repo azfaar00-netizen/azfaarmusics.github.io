@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trending Songs 🎵</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1e1e2f, #252547);
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      color: #ff4fc3;
+    }
+    input {
+      width: 80%;
+      max-width: 400px;
+      padding: 10px;
+      border: none;
+      border-radius: 25px;
+      margin: 20px 0;
+      font-size: 16px;
+      outline: none;
+      text-align: center;
+    }
+    .song-card {
+      background: #333;
+      border-radius: 12px;
+      padding: 15px;
+      margin: 10px auto;
+      width: 300px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+    }
+    .song-card:hover {
+      transform: scale(1.05);
+    }
+    a {
+      color: #00d4ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔥 Trending Songs 2025</h1>
+
+  <!-- 🔍 Search Bar -->
+  <input type="text" id="searchBar" placeholder="Search your favorite song...">
+
+  <!-- 🎵 Song List -->
+  <div id="songList">
+    <div class="song-card">
+      <h3>Heeriye - Arijit Singh</h3>
+      <a href="https://www.youtube.com/watch?v=QvEbw68tO1c" target="_blank">▶ Listen on YouTube</a>
+    </div>
+
+    <div class="song-card">
+      <h3>Pasoori - Ali Sethi & Shae Gill</h3>
+      <a href="https://www.youtube.com/watch?v=5Eqb_-j3FDA" target="_blank">▶ Listen on YouTube</a>
+    </div>
+
+    <div class="song-card">
+      <h3>Phir Aur Kya Chahiye - Arijit Singh</h3>
+      <a href="https://www.youtube.com/watch?v=F2kVxMQu5RY" target="_blank">▶ Listen on YouTube</a>
+    </div>
+
+    <div class="song-card">
+      <h3>JHOL - MAANU & ANNURAL</h3>
+      <a href="https://www.youtube.com/watch?v=-2RAq5o5pwc&list=RD-2RAq5o5pwc&start_radio=1" target="_blank">▶ Listen on YouTube</a><br>
+      <a href="Jhol - PagalWorld.mp3">⬇ Download</a>
+    </div>
+
+    <div class="song-card">
+      <h3>JANM JANM - SHAH RUKH KHAN & KAJOL</h3>
+      <a href="https://www.youtube.com/watch?v=pIBoAh4OXhQ&list=RDpIBoAh4OXhQ&start_radio=1" target="_blank">▶ Listen on YouTube</a><br>
+      <a href="Janam Janam.mp3">⬇ Download</a>
+    </div>
+
+    <div class="song-card">
+      <h3>KAHANI SUNO - KAIFI KHALIL</h3>
+      <a href="Kahani Suno 2.0-(PagalWorld.Org.Im).mp3">⬇ Download</a>
+    </div>
+
+    <div class="song-card">
+      <h3>HASI BAN GAYE - AMI MISHRA</h3>
+      <a href="Hasi Ban Gaye.mp3">⬇ Download</a>
+    </div>
+    <audio autoplay loop>
+  <source src="soft-background.mp3" type="audio/mpeg">
+</audio>
+
+
+    <div class="song-card">
+      <h3>TUMHEIN DILLAGI - NUSRAT FATEH ALI KHAN</h3>
+      <a href="Nusrat Fateh Ali Khan_03_Tumhein Dillagi Bhool Jaani Padegi.mp3">⬇ Download</a>
+    </div>
+    <p>👁️ Visitors Count: <span id="count">0</span></p>
+<script>
+  let count = localStorage.getItem('visits') || 0;
+  count++;
+  localStorage.setItem('visits', count);
+  document.getElementById('count').textContent = count;
+</script>
+
+  </div>
+
+  <p>Made with ❤️ by Azfaar</p>
+
+  <script>
+    const searchBar = document.getElementById('searchBar');
+    const songs = document.querySelectorAll('.song-card');
+
+    searchBar.addEventListener('input', () => {
+      const text = searchBar.value.toLowerCase();
+      songs.forEach(song => {
+        const songName = song.querySelector('h3').textContent.toLowerCase();
+        song.style.display = songName.includes(text) ? 'block' : 'none';
+      });
+    });
+  </script>
+  <footer style="margin-top:30px; color:#aaa;">
+  <p>© 2025 Azfaar Music | <a href="azfaar00@gmail.com" style="color:#00d4ff;">Contact Us</a></p>
+</footer>
+
+</body>
+</html>
